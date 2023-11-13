@@ -1,5 +1,7 @@
 class App {
-  async play() {}
+  async play() {
+    console.log("안녕하세요")
+  }
 }
 
 export default App;
