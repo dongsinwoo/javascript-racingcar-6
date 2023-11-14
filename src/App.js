@@ -1,9 +1,9 @@
 import { Inputs } from "./console/Input.js";
 import { Print } from "./console/print.js";
 import { game } from "./util/game.js";
-import { GAME_MESSAGE, GAME_CONST } from "./util/const.js";
+import { GAME_CONST } from "./util/const.js";
 import { inputErr, arayErr, numErr} from "./util/throw.js";
-import { Console } from "@woowacourse/mission-utils";
+
 
 class App {
   async play() {
@@ -33,12 +33,10 @@ class App {
     // 게임 횟수에 대한 예외처리
     numErr(userPlayInput);
 
-    // cars 개체
+    // cars의 거리를 각각 주기 위함.
     let carsObject = {}
 
-    
-
-    while( 0 < userPlayInput){
+    while(0 < userPlayInput){
       userPlayInput--;
 
       // carsObject에 키와 벨류 넣어주기
@@ -59,10 +57,8 @@ class App {
       print.enter();
     }
 
-
-    
-
-
+    // 우승자 출력
+    print.winnerMsg(game.winner(carsObject))
 
   }
 }

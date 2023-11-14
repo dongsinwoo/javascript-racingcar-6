@@ -6,16 +6,22 @@ const game = {
         return Random.pickNumberInRange(min, max);
     },
 
-    goStap(num){
-        if(num >= 4){
-            return + "-"
-        }else{
-            return;
-        }
-    },
+    winner(carsObject){
+        let winner = []
+        let maxScore = 0;
 
-    score(car){
-        return car.length;
+        for(const key in carsObject){
+            let score = carsObject[key].leng.length
+
+            if (score > maxScore) {
+                maxScore = score;
+                winner = [key];
+            }else if(score == maxScore){
+                winner.push(key)
+            }
+        }
+
+        return winner.join(",")
     }
 
 }
